@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sundaw Lawn Care LLC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* ========== Base Styles ========== */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ========== Header / Nav ========== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #205b2b;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 14px;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+        nav {
+            display: flex;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+        nav a {
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* Mobile nav toggle */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 3px;
+        }
+        .nav-toggle span {
+            width: 20px;
+            height: 2px;
+            background: #fff;
+        }
+
+        /* ========== Layout Helpers ========== */
+        section {
+            padding: 24px 14px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 0;
+            color: #205b2b;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        p {
+            margin: 6px 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .grid-two {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 16px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 6px;
+            padding: 12px 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            font-size: 0.95rem;
+        }
+
+        /* ========== Hero ========== */
+        .hero {
+            background: linear-gradient(120deg, #205b2b, #3d8a45);
+            color: #fff;
+            padding: 30px 14px 22px;
+        }
+        .hero-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 16px;
+            align-items: center;
+        }
+        .hero h1 {
+            margin: 0 0 8px;
+            font-size: 1.8rem;
+        }
+        .hero p {
+            margin: 4px 0;
+            font-size: 0.98rem;
+        }
+        .hero-cta {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 8px 14px;
+            background: #fff;
+            color: #205b2b;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        /* ========== Services ========== */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 8px;
+        }
+        .service-item {
+            background: #fff;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 0.9rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .service-item strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* ========== Form ========== */
+        form {
+            display: grid;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        label {
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        input, textarea {
+            padding: 7px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 0.9rem;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        button[type="submit"] {
+            margin-top: 4px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: none;
+            background: #205b2b;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        /* ========== Gallery ========== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+        }
+        .gallery-grid div {
+            background: #e5e5e5;
+            border-radius: 6px;
+            padding: 36px 6px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        /* ========== Reviews ========== */
+        .reviews-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .review {
+            background: #fff;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .review h3 {
+            margin: 0 0 4px;
+            font-size: 0.95rem;
+            color: #205b2b;
+        }
+        .review p {
+            margin: 0;
+            font-size: 0.88rem;
+        }
+
+        /* ========== Contact / Footer ========== */
+        .contact-info {
+            font-size: 0.9rem;
+        }
+        .contact-info p {
+            margin: 4px 0;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 10px 0 14px;
+            color: #555;
+        }
+
+        /* ========== Responsive ========== */
+        @media (max-width: 720px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+            .grid-two {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 640px) {
+            nav {
+                position: absolute;
+                top: 44px;
+                right: 0;
+                background: #205b2b;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6px 10px;
+                display: none;
+            }
+            nav a {
+                padding: 4px 0;
+            }
+            .nav-toggle {
+                display: flex;
+            }
+            header {
+                flex-wrap: wrap;
+            }
+            header.nav-open nav {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header id="top">
+    <div class="logo">Sundaw Lawn Care LLC</div>
+    <div class="nav-toggle" onclick="document.querySelector('header').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+    </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#signup">Sign Up</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-inner">
+        <div>
+            <h1>Year‑Round Lawn & Outdoor Care</h1>
+            <p>Sundaw Lawn Care LLC keeps your property clean, green, and worry‑free — from mowing to snow removal.</p>
+            <div class="hero-cta">
+                <a href="#signup" class="btn">Get a Free Estimate</a>
+                <a href="#services" class="btn btn-outline">View Services</a>
+            </div>
+        </div>
+        <div>
+            <p style="font-size:0.9rem; margin-bottom:4px;"><strong>Serving local homes and businesses.</strong></p>
+            <p style="font-size:0.85rem;">Lawn mowing, leaf blowing, planting, log removal, maintenance, snow removal, garbage removal, and more — done reliably and on schedule.</p>
+        </div>
+    </div>
+</section>
+
+<!-- About / Advertising -->
+<section id="about">
+    <div class="grid-two">
+        <div class="card">
+            <h2>About Sundaw Lawn Care LLC</h2>
+            <p>We provide dependable lawn care and outdoor maintenance with a focus on clean work, clear communication, and fair pricing.</p>
+            <p>Whether you need weekly mowing, seasonal cleanups, or help digging out after a snowstorm, we show up ready to work and leave your property looking better than when we arrived.</p>
+        </div>
+        <div class="card">
+            <h2>Why People Choose Us</h2>
+            <ul style="padding-left:18px; margin:6px 0; font-size:0.9rem;">
+                <li>Reliable, on‑time service</li>
+                <li>Friendly, respectful crew</li>
+                <li>Honest quotes and simple scheduling</li>
+                <li>Residential and small commercial properties</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+    <h2>Services We Offer</h2>
+    <p style="margin-bottom:8px;">Tell us what you need — we’ll build a simple plan that fits your yard and your budget.</p>
+    <div class="services-list">
+        <div class="service-item">
+            <strong>Lawn Mowing</strong>
+            <span>Regular or one‑time cuts to keep your yard neat.</span>
+        </div>
+        <div class="service-item">
+            <strong>Leaf Blowing</strong>
+            <span>Clearing leaves from lawns, driveways, and walkways.</span>
+        </div>
+        <div class="service-item">
+            <strong>Planting</strong>
+            <span>Flowers, shrubs, small trees, and bed touch‑ups.</span>
+        </div>
+        <div class="service-item">
+            <strong>Log & Branch Removal</strong>
+            <span>Clean up fallen branches, logs, and debris.</span>
+        </div>
+        <div class="service-item">
+            <strong>General Maintenance</strong>
+            <span>Edging, trimming, weed pulling, and touch‑ups.</span>
+        </div>
+        <div class="service-item">
+            <strong>Snow Removal</strong>
+            <span>Driveways, walkways, and steps cleared in winter.</span>
+        </div>
+        <div class="service-item">
+            <strong>Garbage & Yard Waste Removal</strong>
+            <span>Haul away bags, brush, and outdoor junk.</span>
+        </div>
+        <div class="service-item">
+            <strong>And More</strong>
+            <span>Have something else in mind? Just ask.</span>
+        </div>
+    </div>
+</section>
+
+<!-- Sign Up / Request -->
+<section id="signup">
+    <div class="grid-two">
+        <div class="card">
+            <h2>Request Service</h2>
+            <p>Tell us about your property and what you’re looking for. We’ll follow up with options and pricing.</p>
+            <<form action="http://localhost:3000/api/request-service" method="post">
+                <div>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" required>
+                </div>
+                <div>
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" type="tel" required>
+                </div>
+                <div>
+                    <label for="servicesNeeded">What do you need done?</label>
+                    <textarea id="servicesNeeded" name="servicesNeeded" required
+                        placeholder="Example: weekly mowing and leaf cleanup, plus snow removal in winter."></textarea>
+                </div>
+                <button type="submit">Submit Request</button>
+            </form>
+        </div>
+        <div class="card">
+            <h2>Typical Jobs We Handle</h2>
+            <ul style="padding-left:18px; margin:6px 0; font-size:0.9rem;">
+                <li>Weekly or bi‑weekly lawn mowing</li>
+                <li>Full fall leaf cleanup and removal</li>
+                <li>Spring yard cleanup and bed refresh</li>
+                <li>Snow removal after storms</li>
+                <li>One‑time property cleanups for moving in/out</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery">
+    <h2>Gallery</h2>
+    <p style="margin-bottom:8px;">Here’s a preview of the kind of before‑and‑after results you can expect.</p>
+    <div class="gallery-grid">
+        <!-- Replace these with real images later -->
+        <div>Freshly cut front yard</div>
+        <div>Leaf‑free driveway and walk</div>
+        <div>Cleaned up side yard and brush</div>
+        <div>Winter snow removal job</div>
+    </div>
+</section>
+
+<!-- Reviews -->
+<section id="reviews">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-list">
+        <div class="review">
+            <h3>John D.</h3>
+            <p>"They show up when they say they will and my lawn always looks sharp. Very easy to work with."</p>
+        </div>
+        <div class="review">
+            <h3>Sarah P.</h3>
+            <p>"We use Sundaw for mowing in the summer and snow removal in the winter. Reliable and reasonably priced."</p>
+        </div>
+        <div class="review">
+            <h3>Mike R.</h3>
+            <p>"Had a big cleanup after a storm — branches, leaves, everything. They knocked it out in one afternoon."</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <div class="card contact-info">
+        <h2>Contact & Service Area</h2>
+        <p><strong>Company:</strong> Sundaw Lawn Care LLC</p>
+        <p><strong>Phone:</strong> (555) 555‑5555</p>
+        <p><strong>Email:</strong> info@sundawlawncare.com</p>
+        <p><strong>Service Types:</strong> Residential and small commercial</p>
+        <p style="margin-top:6px;">Call, email, or use the sign‑up form and we’ll get back to you as soon as possible.</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Sundaw Lawn Care LLC · All rights reserved
+</footer>
+
+</body>
+</html>
