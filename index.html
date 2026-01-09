@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sundaw Lawn Care LLC</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2E7D32;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1598514982841-14f6b6b74a09?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 40px;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin: 10px 0 20px;
+        }
+        .cta-btn {
+            background: #F4D03F;
+            padding: 12px 25px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 30px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        h2 {
+            color: #2E7D32;
+            margin-bottom: 20px;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        .service-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Pricing */
+        .pricing-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: #fff;
+            padding: 20px;
+            border-left: 5px solid #2E7D32;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        /* Contact Form */
+        form {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #2E7D32;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Sundaw Lawn Care LLC</div>
+        <div>
+            <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h1>Professional Lawn Care in Saw Creek, Bushkill, East Stroudsburg, and Surrounding Area</h1>
+        <p>Reliable mowing, trimming, cleanup, and seasonal services you can count on.</p>
+        <a href="#contact"><button class="cta-btn">Request a Free Quote</button></a>
+    </div>
+
+    <!-- Services -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <h3>Lawn Mowing</h3>
+                <p>Weekly or bi-weekly mowing with clean, professional results.</p>
+            </div>
+            <div class="service-box">
+                <h3>Trimming & Edging</h3>
+                <p>Sharp, clean edges around walkways, driveways, and flower beds.</p>
+            </div>
+            <div class="service-box">
+                <h3>Leaf Cleanup</h3>
+                <p>Full fall cleanup services to keep your yard clean and healthy.</p>
+            </div>
+            <div class="service-box">
+                <h3>Mulching</h3>
+                <p>Fresh mulch installation to improve curb appeal and plant health.</p>
+            </div>
+            <div class="service-box">
+                <h3>Seasonal Services</h3>
+                <p>Spring cleanup, fall cleanup, and storm debris removal.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing">
+        <h2>Pricing</h2>
+
+        <div class="pricing-box">
+            <h3>Lawn Mowing</h3>
+            <p><strong>Starting at $40 per week</strong></p>
+        </div>
+
+        <div class="pricing-box">
+            <h3>Leaf Cleanup</h3>
+            <p><strong>Starting at $120</strong></p>
+        </div>
+
+        <div class="pricing-box">
+            <h3>Mulching</h3>
+            <p><strong>Starting at $150</strong></p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <h2>Customer Reviews</h2>
+
+        <div class="testimonial">
+            “Sundaw Lawn Care keeps my yard looking amazing every week. Highly recommend!”  
+            <br><strong>- Sarah M.</strong>
+        </div>
+
+        <div class="testimonial">
+            “Fast, reliable, and professional. Best lawn service in the area.”  
+            <br><strong>- John D.</strong>
+        </div>
+
+        <div class="testimonial">
+            “Great communication and excellent work. My property has never looked better.”  
+            <br><strong>- Lisa R.</strong>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact">
+        <h2>Request a Free Quote</h2>
+        <form action="https://formspree.io/f/yourformid" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="address" placeholder="Your Address" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <select name="service">
+                <option value="">Select a Service</option>
+                <option>Lawn Mowing</option>
+                <option>Trimming & Edging</option>
+                <option>Leaf Cleanup</option>
+                <option>Mulching</option>
+                <option>Seasonal Cleanup</option>
+            </select>
+
+            <textarea name="details" rows="5" placeholder="Tell us about your property..."></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Sundaw Lawn Care LLC</p>
+        <p>Serving Saw Creek, Bushkill, East Stroudsburg, and surrounding area</p>
+        <p>Email: sundawlawncare@gmail.com</p>
+        <p>© 2026 Sundaw Lawn Care LLC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
